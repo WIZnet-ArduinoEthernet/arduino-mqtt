@@ -118,7 +118,7 @@ MQTTClient::~MQTTClient() {
   free(this->writeBuf);
 }
 
-void MQTTClient::begin(const char hostname[], int port, Client &client) {
+void MQTTClient::begin(const char hostname[], int port, Client6 &client) {
   // set hostname and port
   this->setHost(hostname, port);
 

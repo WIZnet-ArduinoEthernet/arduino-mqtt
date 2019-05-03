@@ -17,7 +17,7 @@ typedef struct {
 } lwmqtt_arduino_timer_t;
 
 typedef struct {
-  Client *client;
+  Client6 *client;
 } lwmqtt_arduino_network_t;
 
 class MQTTClient;
@@ -41,7 +41,7 @@ class MQTTClient {
   bool cleanSession = true;
   uint32_t timeout = 1000;
 
-  Client *netClient = nullptr;
+  Client6 *netClient = nullptr;
   const char *hostname = nullptr;
   int port = 0;
   lwmqtt_will_t *will = nullptr;
@@ -61,8 +61,8 @@ class MQTTClient {
 
   ~MQTTClient();
 
-  void begin(const char hostname[], Client &client) { this->begin(hostname, 1883, client); }
-  void begin(const char hostname[], int port, Client &client);
+  void begin(const char hostname[], Client6 &client) { this->begin(hostname, 1883, client); }
+  void begin(const char hostname[], int port, Client6 &client);
 
   void onMessage(MQTTClientCallbackSimple cb);
   void onMessageAdvanced(MQTTClientCallbackAdvanced cb);
