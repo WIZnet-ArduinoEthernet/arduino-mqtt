@@ -2,7 +2,7 @@
 #define MQTT_CLIENT_H
 
 #include <Arduino.h>
-#include <Client.h>
+#include <Client6.h>
 #include <Stream.h>
 
 extern "C" {
